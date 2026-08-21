@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Workplace Productivity Assistant</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Assistant</span>
+                </div>
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item active">
+                        <a href="#" class="nav-link" data-section="dashboard">
+                            <i class="fas fa-home"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="email">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email Generator</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="meeting">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Meeting Summarizer</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="tasks">
+                            <i class="fas fa-tasks"></i>
+                            <span>Task Planner</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="research">
+                            <i class="fas fa-search"></i>
+                            <span>Research Assistant</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" data-section="chatbot">
+                            <i class="fas fa-comments"></i>
+                            <span>AI Chatbot</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="settings-btn" id="settingsBtn">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Header -->
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search or ask AI..." id="searchInput">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <button class="notification-btn" id="notificationBtn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="profile-btn" id="profileBtn">
+                        <img src="https://via.placeholder.com/40" alt="Profile">
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Section -->
+                <section id="dashboard-section" class="section active">
+                    <div class="dashboard-grid">
+                        <!-- Stats Cards -->
+                        <div class="stats-row">
+                            <div class="stat-card">
+                                <div class="stat-icon email-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Email Generator</h3>
+                                    <p class="stat-value">24</p>
+                                    <p class="stat-label">Emails Generated</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon meeting-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Meetings</h3>
+                                    <p class="stat-value">8</p>
+                                    <p class="stat-label">Summaries Created</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon task-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Tasks</h3>
+                                    <p class="stat-value">12</p>
+                                    <p class="stat-label">Plans Created</p>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon research-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="stat-content">
+                                    <h3>Research</h3>
+                                    <p class="stat-value">15</p>
+                                    <p class="stat-label">Documents Analyzed</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Access & Recent Activity -->
+                        <div class="dashboard-content">
+                            <div class="quick-access">
+                                <h2>Quick Access</h2>
+                                <div class="quick-buttons">
+                                    <button class="quick-btn" data-section="email">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        Generate Email
+                                    </button>
+                                    <button class="quick-btn" data-section="meeting">
+                                        <i class="fas fa-file-alt"></i>
+                                        Summarize Meeting
+                                    </button>
+                                    <button class="quick-btn" data-section="tasks">
+                                        <i class="fas fa-calendar"></i>
+                                        Create Plan
+                                    </button>
+                                    <button class="quick-btn" data-section="research">
+                                        <i class="fas fa-book"></i>
+                                        Analyze Content
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="recent-activity">
+                                <h2>Recent Activity</h2>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-icon email">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <h4>Generated Email to Client</h4>
+                                            <p>Formal tone, project update</p>
+                                            <span class="time">2 hours ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon meeting">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <h4>Summarized Team Meeting</h4>
+                                            <p>5 action items extracted</p>
+                                            <span class="time">4 hours ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon task">
+                                            <i class="fas fa-tasks"></i>
+                                        </div>
+                                        <div class="activity-content">
+                                            <h4>Created Weekly Plan</h4>
+                                            <p>8 tasks prioritized</p>
+                                            <span class="time">1 day ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Email Generator Section -->
+                <section id="email-section" class="section">
+                    <div class="feature-container">
+                        <div class="feature-header">
+                            <h2>Smart Email Generator</h2>
+                            <p>Create professional emails with AI assistance</p>
+                        </div>
+
+                        <form class="feature-form" id="emailForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="emailTone">Email Tone</label>
+                                    <select id="emailTone" required>
+                                        <option value="">Select tone...</option>
+                                        <option value="formal">Formal</option>
+                                        <option value="informal">Informal</option>
+                                        <option value="persuasive">Persuasive</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailAudience">Audience</label>
+                                    <select id="emailAudience" required>
+                                        <option value="">Select audience...</option>
+                                        <option value="client">Client</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="team">Team</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailTopic">Email Topic</label>
+                                <input type="text" id="emailTopic" placeholder="E.g., Q3 Project Update" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="emailContext">Additional Context (Optional)</label>
+                                <textarea id="emailContext" placeholder="Add any additional information..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-magic"></i> Generate Email
+                            </button>
+                        </form>
+
+                        <div id="emailResult" class="result-container" style="display: none;">
+                            <div class="result-header">
+                                <h3>Generated Email</h3>
+                                <div class="result-actions">
+                                    <button id="copyEmailBtn" class="btn-icon" title="Copy">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                    <button id="downloadEmailBtn" class="btn-icon" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button id="regenerateEmailBtn" class="btn-icon" title="Regenerate">
+                                        <i class="fas fa-redo"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="emailContent" class="result-content"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Meeting Summarizer Section -->
+                <section id="meeting-section" class="section">
+                    <div class="feature-container">
+                        <div class="feature-header">
+                            <h2>Meeting Notes Summarizer</h2>
+                            <p>Extract key points and action items from meeting notes</p>
+                        </div>
+
+                        <form class="feature-form" id="meetingForm">
+                            <div class="form-group">
+                                <label for="meetingTitle">Meeting Title (Optional)</label>
+                                <input type="text" id="meetingTitle" placeholder="E.g., Q3 Strategy Planning">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="meetingAttendees">Attendees (Optional)</label>
+                                <input type="text" id="meetingAttendees" placeholder="E.g., John, Sarah, Mike">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="meetingNotes">Meeting Notes *</label>
+                                <textarea id="meetingNotes" placeholder="Paste your meeting notes here..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-brain"></i> Summarize Meeting
+                            </button>
+                        </form>
+
+                        <div id="meetingResult" class="result-container" style="display: none;">
+                            <div class="result-header">
+                                <h3>Meeting Summary</h3>
+                            </div>
+                            <div id="meetingContent" class="result-content">
+                                <div class="summary-section">
+                                    <h4>Summary</h4>
+                                    <p id="meetingSummary"></p>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>Key Points</h4>
+                                    <ul id="meetingKeyPoints"></ul>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>Action Items</h4>
+                                    <ul id="meetingActionItems"></ul>
+                                </div>
+                                <div class="summary-section">
+                                    <h4>Deadlines</h4>
+                                    <ul id="meetingDeadlines"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Task Planner Section -->
+                <section id="tasks-section" class="section">
+                    <div class="feature-container">
+                        <div class="feature-header">
+                            <h2>AI Task Planner</h2>
+                            <p>Prioritize and schedule your tasks intelligently</p>
+                        </div>
+
+                        <form class="feature-form" id="tasksForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="taskTimeframe">Time Frame</label>
+                                    <select id="taskTimeframe" required>
+                                        <option value="daily">Daily</option>
+                                        <option value="weekly">Weekly</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="taskHours">Working Hours</label>
+                                    <input type="number" id="taskHours" min="1" max="24" value="8" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="taskList">Tasks (Enter one per line) *</label>
+                                <textarea id="taskList" placeholder="Task 1&#10;Task 2&#10;Task 3..." required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="taskContext">Additional Context (Optional)</label>
+                                <textarea id="taskContext" placeholder="Any deadlines, priorities, or constraints..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-calendar"></i> Generate Plan
+                            </button>
+                        </form>
+
+                        <div id="tasksResult" class="result-container" style="display: none;">
+                            <div class="result-header">
+                                <h3>Task Plan</h3>
+                            </div>
+                            <div id="tasksContent" class="result-content">
+                                <div class="plan-section">
+                                    <h4>Plan Overview</h4>
+                                    <p id="planOverview"></p>
+                                </div>
+                                <div class="plan-section">
+                                    <h4>Scheduled Tasks</h4>
+                                    <div id="scheduledTasks" class="tasks-list"></div>
+                                </div>
+                                <div class="plan-section">
+                                    <h4>Optimization Tips</h4>
+                                    <ul id="optimizationTips"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Research Assistant Section -->
+                <section id="research-section" class="section">
+                    <div class="feature-container">
+                        <div class="feature-header">
+                            <h2>Research Assistant</h2>
+                            <p>Summarize and analyze research content</p>
+                        </div>
+
+                        <form class="feature-form" id="researchForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="researchType">Summary Type</label>
+                                    <select id="researchType" required>
+                                        <option value="general">General</option>
+                                        <option value="executive">Executive</option>
+                                        <option value="technical">Technical</option>
+                                        <option value="key_points">Key Points Only</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="researchLength">Summary Length</label>
+                                    <select id="researchLength" required>
+                                        <option value="short">Short</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="detailed">Detailed</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="researchContent">Content to Analyze *</label>
+                                <textarea id="researchContent" placeholder="Paste article, report, or research content here..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-book"></i> Analyze Content
+                            </button>
+                        </form>
+
+                        <div id="researchResult" class="result-container" style="display: none;">
+                            <div class="result-header">
+                                <h3>Analysis Results</h3>
+                            </div>
+                            <div id="researchContent" class="result-content">
+                                <div class="analysis-section">
+                                    <h4>Summary</h4>
+                                    <p id="analysisSummary"></p>
+                                </div>
+                                <div class="analysis-section">
+                                    <h4>Key Points</h4>
+                                    <ul id="analysisKeyPoints"></ul>
+                                </div>
+                                <div class="analysis-section">
+                                    <h4>Key Insights</h4>
+                                    <ul id="analysisInsights"></ul>
+                                </div>
+                                <div class="analysis-section">
+                                    <h4>Implications</h4>
+                                    <p id="analysisImplications"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Chatbot Section -->
+                <section id="chatbot-section" class="section">
+                    <div class="chatbot-container">
+                        <div class="chatbot-header">
+                            <h2>AI Workplace Assistant</h2>
+                            <p>Ask anything about productivity and work automation</p>
+                        </div>
+
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message assistant-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>Hello! I'm your AI Workplace Assistant. I can help you with email drafting, meeting summarization, task planning, research analysis, and general productivity advice. What can I help you with today?</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat-input-area">
+                            <form id="chatForm" class="chat-form">
+                                <input 
+                                    type="text" 
+                                    id="chatInput" 
+                                    placeholder="Type your message or ask for help..."
+                                    autocomplete="off"
+                                >
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Loading Modal -->
+    <div class="loading-modal" id="loadingModal">
+        <div class="spinner"></div>
+        <p>Processing your request...</p>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast"></div>
+
+    <script src="static/js/app.js"></script>
+</body>
+</html>
