@@ -1,0 +1,50 @@
+{
+  "name": "ai-productivity-assistant",
+  "version": "1.0.0",
+  "description": "AI-powered assistant for automating workplace tasks",
+  "main": "app.py",
+  "scripts": {
+    "start": "python app.py",
+    "dev": "python app.py --debug",
+    "test": "pytest tests/",
+    "test:coverage": "pytest tests/ --cov=src",
+    "lint": "pylint src/",
+    "format": "black src/",
+    "type-check": "mypy src/"
+  },
+  "keywords": [
+    "AI",
+    "productivity",
+    "automation",
+    "chatgpt",
+    "gemini",
+    "email",
+    "meeting",
+    "tasks",
+    "research"
+  ],
+  "author": "Gracelya700",
+  "license": "MIT",
+  "dependencies": {
+    "python": ">=3.8",
+    "openai": ">=0.27.0",
+    "google-generativeai": ">=0.3.0",
+    "flask": ">=2.3.0",
+    "python-dotenv": ">=1.0.0"
+  },
+  "devDependencies": {
+    "pytest": ">=7.2.0",
+    "pytest-cov": ">=4.0.0",
+    "black": ">=23.0.0",
+    "flake8": ">=5.0.0",
+    "mypy": ">=0.991"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gracelya700/AI-Productivity-Assistant.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Gracelya700/AI-Productivity-Assistant/issues"
+  },
+  "homepage": "https://github.com/Gracelya700/AI-Productivity-Assistant#readme"
+}
